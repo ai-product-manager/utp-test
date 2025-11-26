@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Empresa automotriz líder en innovación, venta de vehículos y servicios posventa." />
+  <link rel="icon" href="data:,"> 
+  <title>AutoNova — Movimiento que inspira</title>
+
+  <!-- Tip: Reemplaza la fuente si deseas otra -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --accent:#0b5ed7;
+      --accent-2:#0f9d58;
+      --muted:#6b7280;
+      --bg:#0f1724;
+      --card:#0f1724;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#f8fafc 0%, #e6eef9 100%);
+      color:#0b1221;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    /* Container & Layout */
+    .container{max-width:1200px;margin:0 auto;padding:1rem}
+    header{padding:1rem 0}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+    .brand{display:flex;align-items:center;gap:.6rem}
+    .logo{
+      width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
+      display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:1.1rem;
+      box-shadow:0 6px 20px rgba(11,94,214,0.18);
+    }
+    .brand h1{font-size:1.1rem;margin:0}
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .nav-links a{color:#0b1221;text-decoration:none;padding:.4rem .8rem;border-radius:8px;font-weight:600}
+    .nav-links a.cta{background:var(--accent);color:white}
+    .nav-toggle{display:none;background:transparent;border:0;font-size:1.2rem}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 460px;gap:2rem;align-items:center;padding:2.5rem 0}
+    .hero-left h2{font-size:2.1rem;margin:0 0 .6rem}
+    .hero-left p{color:var(--muted);margin:0 0 1.2rem}
+    .hero-ctas{display:flex;gap:.8rem}
+    .btn{padding:.8rem 1.2rem;border-radius:10px;border:0;font-weight:700;cursor:pointer}
+    .btn-primary{background:var(--accent);color:white}
+    .btn-outline{background:transparent;border:2px solid rgba(11,86,214,0.12);color:var(--accent)}
+
+    .hero-right{width:100%;height:320px;background:linear-gradient(180deg,#eaf2ff,white);border-radius:18px;overflow:hidden;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 40px rgba(2,6,23,0.08)}
+    .car-img{max-width:100%;height:auto;transform:translateY(4%);}
+
+    /* Sections */
+    section{padding:2rem 0}
+    h3{margin:0 0 1rem}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .card{background:white;border-radius:12px;padding:1rem;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+    .model-img{border-radius:8px;width:100%;height:140px;object-fit:cover;margin-bottom:.8rem}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
+    .feature{background:linear-gradient(180deg,#ffffff,#f8fafc);padding:1rem;border-radius:12px;display:flex;gap:.8rem;align-items:flex-start}
+    .feature .icon{width:44px;height:44px;border-radius:8px;background:var(--glass);display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--accent)}
+    .feature h4{margin:0 0 .4rem;font-size:1rem}
+    .feature p{margin:0;color:var(--muted);font-size:.95rem}
+
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+    .testimonial{background:white;border-radius:12px;padding:1rem;box-shadow:0 6px 20px rgba(2,6,23,0.06)}
+
+    /* Contact */
+    .contact{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:start}
+    .contact-form{background:white;padding:1rem;border-radius:12px;box-shadow:0 10px 30px rgba(2,6,23,0.04)}
+    label{display:block;font-size:.9rem;margin:.6rem 0;color:#111827}
+    input[type="text"], input[type="email"], textarea, select{
+      width:100%;padding:.8rem;border:1px solid #e6edf3;border-radius:8px;font-size:.95rem;
+    }
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .form-actions{text-align:right;margin-top:1rem}
+    .small{font-size:.85rem;color:var(--muted)}
+
+    footer{padding:2rem 0;border-top:1px solid #eef2f6;margin-top:2rem}
+    .footer-grid{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+    .socials{display:flex;gap:.6rem}
+
+    /* Responsive */
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr; text-align:center}
+      .hero-right{order:-1;height:240px}
+      .features{grid-template-columns:repeat(1,1fr)}
+      .contact{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .nav-toggle{display:block}
+    }
+  </style>
+
+</head>
+<body>
+  <header class="container">
+    <nav>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">AN</div>
+        <div>
+          <h1>AutoNova</h1>
+          <div class="small">Movimiento que inspira</div>
+        </div>
+      </div>
+
+      <div class="nav-links" role="navigation" aria-label="Navegación principal">
+        <a href="#modelos">Modelos</a>
+        <a href="#financiacion">Financiación</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Sobre nosotros</a>
+        <a class="cta" href="#contacto">Contacto</a>
+      </div>
+
+      <button id="navToggle" class="nav-toggle" aria-expanded="false" aria-controls="mobileMenu">☰</button>
+    </nav>
+
+    <div id="mobileMenu" style="display:none;margin-top:.8rem">
+      <div class="card" style="display:flex;flex-direction:column;gap:.6rem;">
+        <a href="#modelos">Modelos</a>
+        <a href="#financiacion">Financiación</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#nosotros">Sobre nosotros</a>
+        <a href="#contacto" class="cta">Contacto</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="container hero" aria-labelledby="hero-heading">
+      <div class="hero-left">
+        <h2 id="hero-heading">Tecnología, diseño y seguridad en cada kilómetro</h2>
+        <p>Descubre el nuevo catálogo de AutoNova: vehículos eléctricos e híbridos con emisiones bajas, diseño moderno y conectividad de última generación.</p>
+
+        <div class="hero-ctas">
+          <button class="btn btn-primary" onclick="document.getElementById('contacto').scrollIntoView({behavior:'smooth'})">Solicitar prueba</button>
+          <button class="btn btn-outline" onclick="document.getElementById('modelos').scrollIntoView({behavior:'smooth'})">Ver modelos</button>
+        </div>
+
+        <div style="margin-top:1.2rem;color:var(--muted);font-size:.9rem">
+          <strong>Promoción:</strong> 0% de interés los primeros 12 meses en modelos seleccionados.
+        </div>
+      </div>
+
+      <div class="hero-right" aria-hidden="true">
+        <!-- Reemplaza por una imagen propia -->
+        <img class="car-img" src="https://images.unsplash.com/photo-1549921296-3b817f84b2c1?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=7a61f8445f0df5d7874d0565f2b5f12a" alt="Auto deportivo moderno">
+      </div>
+    </section>
+
+    <section id="modelos" class="container" aria-labelledby="models-heading">
+      <h3 id="models-heading">Modelos destacados</h3>
+      <div class="cards">
+        <article class="card" aria-labelledby="m1">
+          <img class="model-img" src="https://images.unsplash.com/photo-1549924231-f129b911e442?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b5c37c0a3657f0f0f7d2b7df3858392" alt="Modelo A">
+          <h4 id="m1">AutoNova S - Eléctrico</h4>
+          <p class="small">Autonomía hasta 600 km, carga rápida y asistente de conducción avanzada.</p>
+        </article>
+
+        <article class="card" aria-labelledby="m2">
+          <img class="model-img" src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=996cbd3e0c5d3ef0f7b1c5e1f3a7b682" alt="Modelo B">
+          <h4 id="m2">AutoNova X - Híbrido</h4>
+          <p class="small">Versatilidad urbana con motores de bajo consumo y diseño elegante.</p>
+        </article>
+
+        <article class="card" aria-labelledby="m3">
+          <img class="model-img" src="https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1400&auto=format&fit=crop&ixlib=rb-4.0.3&s=b8d3f07c1a6c8a42a4c4da1e1e5f9f10" alt="Modelo C">
+          <h4 id="m3">AutoNova Z - SUV</h4>
+          <p class="small">Espacio, confort y seguridad con tecnología de vanguardia.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="financiacion" class="container">
+      <h3>Financiación y promociones</h3>
+      <div class="card" style="display:flex;gap:1rem;align-items:center;padding:1.4rem">
+        <div style="flex:1">
+          <h4>Plan a tu medida</h4>
+          <p class="small">Opciones de financiamiento flexibles, leasing y programas corporativos. Calcula cuotas y compara planes con nuestro simulador en línea.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.6rem">
+          <button class="btn btn-primary" onclick="location.href='#contacto'">Contactar asesor</button>
+          <button class="btn btn-outline" onclick="alert('Simulador: en desarrollo')">Simular cuotas</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="servicios" class="container">
+      <h3>Servicios y garantía</h3>
+      <div class="features" role="list">
+        <div class="feature" role="listitem">
+          <div class="icon">⚙️</div>
+          <div>
+            <h4>Mantenimiento</h4>
+            <p>Revisiones programadas, recambios originales y taller con técnicos certificados.</p>
+          </div>
+        </div>
+
+        <div class="feature" role="listitem">
+          <div class="icon">🔒</div>
+          <div>
+            <h4>Garantía</h4>
+            <p>5 años de garantía en tren motriz y asistencia en carretera 24/7.</p>
+          </div>
+        </div>
+
+        <div class="feature" role="listitem">
+          <div class="icon">📶</div>
+          <div>
+            <h4>Conectividad</h4>
+            <p>Actualizaciones Over-The-Air, APP de control remoto y navegación en tiempo real.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonios" class="container">
+      <h3>Lo que dicen nuestros clientes</h3>
+      <div class="testimonials">
+        <div class="testimonial">
+          <strong>María J.</strong>
+          <p class="small">"Excelente experiencia de compra, el vehículo es silencioso y confortable. El servicio postventa es muy atento."</p>
+        </div>
+
+        <div class="testimonial">
+          <strong>Diego R.</strong>
+          <p class="small">"La financiación fue clara y el equipo nos ayudó a elegir la mejor opción para la empresa."</p>
+        </div>
+
+        <div class="testimonial">
+          <strong>Laura M.</strong>
+          <p class="small">"Me encantan las actualizaciones constantes por OTA y la integración con mi teléfono."</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="container contact" aria-labelledby="contacto-heading">
+      <div>
+        <h3 id="contacto-heading">Cotiza tu próximo Auto</h3>
+        <p class="small">Contacta a nuestros asesores para agendar una prueba de manejo o recibir una cotización personalizada.</p>
+
+        <div class="contact-form card" role="form" aria-labelledby="contacto-heading">
+          <form id="contactForm" onsubmit="return handleSubmit(event)">
+            <div class="form-row">
+              <label>
+                Nombre
+                <input name="name" type="text" required placeholder="Tu nombre" />
+              </label>
+
+              <label>
+                Teléfono
+                <input name="phone" type="text" required placeholder="+34 600 000 000" />
+              </label>
+            </div>
+
+            <label>
+              Email
+              <input name="email" type="email" required placeholder="correo@ejemplo.com" />
+            </label>
+
+            <label>
+              Modelo de interés
+              <select name="model">
+                <option value="s">AutoNova S - Eléctrico</option>
+                <option value="x">AutoNova X - Híbrido</option>
+                <option value="z">AutoNova Z - SUV</option>
+              </select>
+            </label>
+
+            <label>
+              Mensaje
+              <textarea name="message" rows="4" placeholder="¿En qué te podemos ayudar?"></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+            </div>
+            <div id="formFeedback" class="small" style="display:none;margin-top:.8rem"></div>
+          </form>
+        </div>
+      </div>
+
+      <aside class="card" aria-hidden="true" style="padding:1.2rem">
+        <h4>Encuéntranos</h4>
+        <p class="small">Avenida Principal 123, Ciudad, País</p>
+        <p class="small">Horario: Lun - Vie 9:00 - 18:00</p>
+        <a href="tel:+34600000000" class="small" style="display:inline-block;margin-top:.6rem;color:var(--accent)">+34 600 000 000</a>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div class="footer-grid">
+      <div class="small">© <span id="year"></span> AutoNova. Todos los derechos reservados.</div>
+      <div class="socials">
+        <a href="#" title="Facebook">🔗</a>
+        <a href="#" title="Instagram">🔗</a>
+        <a href="#" title="Twitter">🔗</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navegación móvil
+    const navToggle = document.getElementById('navToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    navToggle.addEventListener('click', () => {
+      const open = mobileMenu.style.display === 'block';
+      mobileMenu.style.display = open ? 'none' : 'block';
+      navToggle.setAttribute('aria-expanded', String(!open));
+    });
+
+    // Simple form handling (puedes enviar a tu backend o integrar con un servicio)
+    function handleSubmit(e){
+      e.preventDefault();
+      const form = e.target;
+      const feedback = document.getElementById('formFeedback');
+      // Validación simple
+      const name = form.name.value.trim();
+      const email = form.email.value.trim();
+      if(!name || !email){
+        feedback.style.display = 'block';
+        feedback.style.color = 'crimson';
+        feedback.textContent = 'Por favor completa los campos requeridos.';
+        return false;
+      }
+
+      // Simula envío
+      setTimeout(() => {
+        feedback.style.display = 'block';
+        feedback.style.color = 'green';
+        feedback.textContent = 'Solicitud enviada, pronto te contactaremos.';
+        form.reset();
+      }, 700);
+
+      return false;
+    }
+
+    // Fecha en footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
